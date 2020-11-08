@@ -2,11 +2,11 @@
 class Point
 {
 private:
-	int& _x;
-	int& _y;
+	int _x;
+	int _y;
 
 public:
-	Point(Point& other);
+	Point(const Point &other);
 	Point(int x, int y);
 	Point(int x);
 	~Point();

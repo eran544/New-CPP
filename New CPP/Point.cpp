@@ -1,7 +1,9 @@
 #include "Point.h"
 
-Point::Point(Point& other): _x(other._x), _y(other._y)
+Point::Point(const Point& other) //copy constructor
 {
+	_x = other._x;
+	_y = other._y;
 }
 
 Point::Point(int x, int y): _x(x), _y(y)
@@ -14,11 +16,11 @@ Point::Point(int x): _x(x), _y(0)
 
 Point::~Point()
 {
-	delete _x;
-	delete _y;
+	delete &_x;
+	delete &_y;
 }
 
-Point::Point() : _x(0), _y(0)
+Point::Point(): _x(0), _y(0)
 {
 }
 
