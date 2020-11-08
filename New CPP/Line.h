@@ -5,6 +5,13 @@
 
 class Line
 {
+	/* TODO: REMEMBER RULE OF 5: 
+	* destructor
+	* copy constructor
+	* move constructor
+	* copy assignment constructor
+	* move assignment constructor
+	*/
 private:
 	Point _p1;
 	Point _p2;
@@ -17,11 +24,17 @@ private:
 	void initPoint();
 
 public:
-	Line(Point p1, Point p2): _p1(p1), _p2(p2), _m(0), _n(0), _angle(0), _len(0)
-	{initPoint();}
+	Line(Point p1, Point p2);
+	Line(double x1, double y1, double x2, double y2);
+	Line(Point p);
+	Line();
+	Line(const Line& other); //Copy constructor
+	Line(const Line&& other); //Move constructor
+	~Line(); //Destructor
+	Line& operator=(const Line& other); //Copy assignment
+	Line& operator=(Line&& other); //Move Assignment
+	void changeP1(Point newp1);
+	void changeP2(Point newp2);
+	void PrintLine();
 
-	Line(int x1, int y1, int x2, int y2) : Line(Point(x1, y1), Point(x2, y2))
-	{
-
-	}
 };

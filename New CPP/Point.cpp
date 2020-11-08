@@ -1,9 +1,17 @@
 #include "Point.h"
+#include <iostream>
 
-Point::Point(const Point& other) //copy constructor
+using namespace std;
+
+Point::Point(const Point& other): _x(other._x), _y(other._y) //copy constructor
+{
+}
+
+Point& Point::operator=(const Point& other)
 {
 	_x = other._x;
 	_y = other._y;
+	return *this;
 }
 
 Point::Point(int x, int y): _x(x), _y(y)
@@ -16,20 +24,18 @@ Point::Point(int x): _x(x), _y(0)
 
 Point::~Point()
 {
-	delete &_x;
-	delete &_y;
 }
 
 Point::Point(): _x(0), _y(0)
 {
 }
 
-int Point::getX()
+double Point::getX()
 {
 	return _x;
 }
 
-int Point::getY()
+double Point::getY()
 {
 	return _y;
 }
@@ -52,4 +58,9 @@ void Point::incY()
 void Point::decY()
 {
 	--_y;
+}
+
+void Point::PrintPoint()
+{
+	cout << "(" << _x << "," << _y << ")" << endl;
 }

@@ -1,21 +1,30 @@
 #pragma once
 class Point
 {
+	/* TODO: REMEMBER RULE OF 5:
+	* destructor
+	* copy constructor
+	* move constructor
+	* copy assignment constructor
+	* move assignment constructor
+	*/
 private:
-	int _x;
-	int _y;
+	double _x;
+	double _y;
 
 public:
-	Point(const Point &other);
+	~Point(); // destructor
+	Point(const Point& other); // copy constructor
+	Point& operator=(const Point& other); //copy assignment destructor
 	Point(int x, int y);
 	Point(int x);
-	~Point();
 	Point();
-	int getX();
-	int getY();
+	double getX();
+	double getY();
 	void incX();
 	void decX();
 	void incY();
 	void decY();
+	void PrintPoint();
 };
 
