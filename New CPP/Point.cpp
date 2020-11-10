@@ -3,16 +3,12 @@
 
 using namespace std;
 
+/*
 Point::Point(const Point& other): _x(other._x), _y(other._y) //copy constructor
 {
 }
+*/
 
-Point& Point::operator=(const Point& other)
-{
-	_x = other._x;
-	_y = other._y;
-	return *this;
-}
 
 Point::Point(int x, int y): _x(x), _y(y)
 {
@@ -22,9 +18,11 @@ Point::Point(int x): _x(x), _y(0)
 {
 }
 
+/*
 Point::~Point()
 {
 }
+*/
 
 Point::Point(): _x(0), _y(0)
 {
@@ -60,7 +58,7 @@ void Point::decY()
 	--_y;
 }
 
-void Point::PrintPoint()
+string Point::to_string()
 {
-	cout << "(" << _x << "," << _y << ")" << endl;
+	return "(" + to_string(_x) + "," + to_string(_y) + ")\n";
 }

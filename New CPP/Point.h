@@ -1,4 +1,8 @@
 #pragma once
+#include <string>
+
+using namespace std;
+
 class Point
 {
 	/* TODO: REMEMBER RULE OF 5:
@@ -13,9 +17,9 @@ private:
 	double _y;
 
 public:
-	~Point(); // destructor
-	Point(const Point& other); // copy constructor
-	Point& operator=(const Point& other); //copy assignment destructor
+	//~Point(); // destructor
+	//Point(const Point& other); // copy constructor
+	//Point& operator=(const Point& other); //copy assignment destructor
 	Point(int x, int y);
 	Point(int x);
 	Point();
@@ -25,6 +29,6 @@ public:
 	void decX();
 	void incY();
 	void decY();
-	void PrintPoint();
+	string to_string();
 };
 

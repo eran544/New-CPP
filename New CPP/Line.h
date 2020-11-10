@@ -33,8 +33,9 @@ public:
 	~Line(); //Destructor
 	Line& operator=(const Line& other); //Copy assignment
 	Line& operator=(Line&& other); //Move Assignment
-	void changeP1(Point newp1);
-	void changeP2(Point newp2);
 	void PrintLine();
+	double GetLen();
+	Point GetP1();
+	Point GetP2();
 
 };
